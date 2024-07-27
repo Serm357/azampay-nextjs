@@ -27,7 +27,8 @@ export async function POST() {
     redirectFailURL: "http://localhost:3000/fail",
     redirectSuccessURL: "http://localhost:3000/success",
     requestOrigin:
-      "https://3000-idx-azam-pay-1720550329728.cluster-blu4edcrfnajktuztkjzgyxzek.cloudworkstations.dev/",
+      "http://localhost:3000/",
+      // "https://3000-idx-azam-pay-1720550329728.cluster-blu4edcrfnajktuztkjzgyxzek.cloudworkstations.dev/",
     cart: { items: [{ name: "Shoes" }] },
   };
 
@@ -36,9 +37,10 @@ export async function POST() {
 // const resp= checkout
 // console.log(resp)
 
-console.log(token.statusCode);
+console.log(token.statusCode + "ln 40");
 
 const instance = new azampay.instance({
+  // @ts-ignore
   accessToken: token?.data.accessToken,
   apiKey: "X-API-KEY",
 });
